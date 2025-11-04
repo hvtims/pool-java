@@ -1,5 +1,8 @@
 public class DoOp {
     public static String operate(String[] args) {
+        if (args.length == 0){
+            return "Error";
+        }
         if (args.length > 3) {
             return "Error";
         }
