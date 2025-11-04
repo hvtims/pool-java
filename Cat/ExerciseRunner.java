@@ -12,7 +12,7 @@ public class ExerciseRunner {
         String output = outputStream.toString();
         // Reset out to stdout
         System.setOut(stdout);
-        System.out.println(output.equals("test input file\n"));
+        System.out.println(output.equals("ananan an nakn zknekzanek nzake nzaknekaznekazn knaeknzaken\n"));
 
         ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream();
         PrintStream printStream2 = new PrintStream(outputStream2);
