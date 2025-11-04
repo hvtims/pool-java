@@ -3,7 +3,7 @@ public class DoOp {
         if (args.length == 0){
             return "Error";
         }
-        if (args.length > 3) {
+        if (args.length > 3 || args.length < 3) {
             return "Error";
         }
 
