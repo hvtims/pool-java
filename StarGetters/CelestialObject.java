@@ -6,8 +6,8 @@ public class CelestialObject {
     public void setX(double xx){
         this.x = xx ;
     }
-    public void setY (double yy){
-        this.x = yy;
+    public void setY(double yy){
+        this.y = yy;
     }
     public void setZ(double zz){
         this.z = zz;

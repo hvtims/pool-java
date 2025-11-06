@@ -11,9 +11,9 @@ public class ExerciseRunner {
         defaultStar.setX(0.43);
         defaultStar.setY(0.98);
         defaultStar.setZ(1.43);
-        System.out.println(defaultStar.getX());
-        System.out.println(defaultStar.getY());
-        System.out.println(defaultStar.getZ());
-        System.out.println(defaultStar.getName());
+        System.out.println(defaultStar.getX() + "xxxxxxxxxx");
+        System.out.println(defaultStar.getY() +"yyyyyyyyy");
+        System.out.println(defaultStar.getZ()+ "zzzzzzzzzz");
+        System.out.println(defaultStar.getName() + "nnnnnn");
     }
 }
