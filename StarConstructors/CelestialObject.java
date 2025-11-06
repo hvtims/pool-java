@@ -10,7 +10,7 @@ public class CelestialObject {
         this.z = 0.0;
         this.name = "Soleil";
     }
-    public  CelestialObject(String namee double xx, double yy, double zz){
+    public  CelestialObject(String namee ,double xx, double yy, double zz){
         this.name = namee ;
         this.x = xx ;
         this.y = yy;
