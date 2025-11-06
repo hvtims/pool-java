@@ -49,7 +49,7 @@ public class CelestialObject {
         return Math.sqrt(((xx.x - yy.x)* (xx.x - yy.x) + (xx.y - yy.y)* (xx.y - yy.y) + (xx.z - yy.z)* (xx.z - yy.z))) * KM_IN_ONE_AU; 
     }
     public  String toString(){
-        return String.format("%s is positioned at (%.3f , %.3f , %.3f)" , this.name , this.x , this.y, this.z);
+        return String.format("%s is positioned at (%.3f, %.3f, %.3f)" , this.name , this.x , this.y, this.z);
     }
     public boolean equals(CelestialObject ob){
         if (ob == null){
