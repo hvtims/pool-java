@@ -22,16 +22,16 @@ public class Star extends CelestialObject{
         return String.format("%s shines at the %.3f magnitude", getName(), magnitude);
     }
      @Override
-    public boolean equals(Object obj) {
-        if (magnitude != this.magnitude) return false;
-        if (this == obj) return true; 
-        if (obj == null || getClass() != obj.getClass()) return false;
+    @Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (!(obj instanceof Star)) return false;
+    if (!super.equals(obj)) return false; 
 
-        Star other = (Star) obj;
-        
-        return Double.compare(other.magnitude, magnitude) == 0 &&
-               super.equals(other);
-    }
+    Star other = (Star) obj;
+    return Double.compare(this.magnitude, other.magnitude) == 0;
+}
+
      @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), magnitude);
