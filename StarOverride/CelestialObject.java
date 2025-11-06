@@ -1,82 +1,88 @@
-import java.util.Objects;
+
 public class CelestialObject {
-    public double x ;
-    public double y;
-    public double z;
+
+    public double x, y, z;
     public String name;
-    public static final double KM_IN_ONE_AU = 150000000;
-    public void setX(double xx){
-        this.x = xx ;
-    }
-    public void setY(double yy){
-        this.y = yy;
-    }
-    public void setZ(double zz){
-        this.z = zz;
-    }
-    public void setName(String namee){
-        this.name = namee;
-    }
-    public String getName(){
-        return this.name;
-    }
-    public double getX(){
-        return this.x;
-    }
-    public double getY(){
-        return this.y;
-    }
-    public double getZ(){
-        return this.z;
-    }
-    public CelestialObject(){
+    public static double KM_IN_ONE_AU = 150000000;
+
+    public CelestialObject() {
         this.x = 0.0;
         this.y = 0.0;
         this.z = 0.0;
         this.name = "Soleil";
     }
-    public  CelestialObject(String namee ,double xx, double yy, double zz){
-        this.name = namee ;
-        this.x = xx ;
-        this.y = yy;
-        this.z = zz; 
+
+    public CelestialObject(String name, double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
     }
 
-    public static double getDistanceBetween(CelestialObject xx , CelestialObject yy){
-            return Math.sqrt(((xx.x - yy.x)* (xx.x - yy.x) + (xx.y - yy.y)* (xx.y - yy.y) + (xx.z - yy.z)* (xx.z - yy.z)))  ; 
+    public double getX() {
+        return this.x;
     }
-    public static   double getDistanceBetweenInKm(CelestialObject xx , CelestialObject yy){
-        return Math.sqrt(((xx.x - yy.x)* (xx.x - yy.x) + (xx.y - yy.y)* (xx.y - yy.y) + (xx.z - yy.z)* (xx.z - yy.z))) * KM_IN_ONE_AU; 
+
+    public double getY() {
+        return this.y;
     }
-    public  String toString(){
-        return String.format("%s is positioned at (%.3f, %.3f, %.3f)" , this.name , this.x , this.y, this.z);
+
+    public double getZ() {
+        return this.z;
     }
-    public boolean equals(CelestialObject ob){
-        if (ob == null){
-            return false;
-        }
-        boolean xxx = false;
-        boolean zzz = false;
-        boolean yyy = false ;
-        boolean namee = false;
-        if (ob.x == this.x){
-            xxx = true;
-        }
-         if (ob.z == this.z){
-            zzz = true;
-        }
-        if (ob.y == this.y){
-            yyy = true;
-        }
-        if (ob.name.equals(this.name)){
-            namee = true;
-        }
-        if (xxx && yyy && zzz && namee){
+
+    public void setX(double a) {
+        this.x = a;
+    }
+
+    public void setY(double a) {
+        this.y = a;
+    }
+
+    public void setZ(double a) {
+        this.z = a;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String a) {
+        this.name = a;
+    }
+
+    public static double getDistanceBetween(CelestialObject a, CelestialObject b) {
+        double xx, yy, zz;
+        xx = b.x - a.x;
+        yy = b.y - a.y;
+        zz = b.z - a.z;
+        xx *= xx;
+        yy *= yy;
+        zz *= zz;
+        double res = xx + yy + zz;
+        return Math.sqrt(res);
+    }
+
+    public static double getDistanceBetweenInKm(CelestialObject a, CelestialObject b) {
+        return getDistanceBetween(a, b) * CelestialObject.KM_IN_ONE_AU;
+    }
+
+    public String toString() {
+        return this.name + " is positioned at (" + String.format("%.3f, %.3f, %.3f)", this.x, this.y, this.z);
+    }
+
+    public Boolean equals(CelestialObject object) {
+        if (this == object) {
             return true;
         }
+        if (object == null || getClass() != object.getClass()) {
             return false;
+        }
+
+        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name));
     }
+
     public int hashCode() {
-        return Objects.hash(x, y, z, name);
+        return java.util.Objects.hash(x, y, z, name);
     }
 }
