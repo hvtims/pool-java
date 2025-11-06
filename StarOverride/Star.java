@@ -1,38 +1,41 @@
-import java.util.Objects;
 
-public class Star extends CelestialObject{
+public class Star extends CelestialObject {
+
     private double magnitude;
 
-    public Star(){
-       super(); 
+    public double getMagnitude() {
+        return this.magnitude;
+    }
+
+    public void setMagnitude(double test) {
+        this.magnitude = test;
+    }
+
+    public Star() {
         this.magnitude = 0.0;
     }
-      public Star(String name, double x, double y, double z, double magnitude) {
-        super(name, x, y, z); 
-        this.magnitude = magnitude;
+
+    public Star(String a, double b, double c, double d, double e) {
+        super(a, b, c, d);
+        this.magnitude = e;
     }
-    public double getMagnitude(){
-        return magnitude;
-    }
-    public void setMagnitude(double newmag){
-      this.magnitude=newmag;
-    }
-  @Override
+
     public String toString() {
-        return String.format("%s shines at the %.3f magnitude", getName(), magnitude);
+        return this.name + " shines at the " + String.format("%.3f magnitude", this.magnitude);
     }
-     @Override
-public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!(obj instanceof Star)) return false;
-    if (!super.equals(obj)) return false; // compare inherited fields first
 
-    Star other = (Star) obj;
-    return Double.compare(this.magnitude, other.magnitude) == 0;
-}
+    public Boolean equals(Star object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
 
-     @Override
+        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.magnitude == object.magnitude);
+    }
+
     public int hashCode() {
-        return Objects.hash(super.hashCode(), magnitude);
+        return java.util.Objects.hash(name, x, y, z, magnitude);
     }
 }
