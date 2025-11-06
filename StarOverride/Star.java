@@ -22,11 +22,10 @@ public class Star extends CelestialObject{
         return String.format("%s shines at the %.3f magnitude", getName(), magnitude);
     }
      @Override
-    @Override
 public boolean equals(Object obj) {
     if (this == obj) return true;
     if (!(obj instanceof Star)) return false;
-    if (!super.equals(obj)) return false; 
+    if (!super.equals(obj)) return false; // compare inherited fields first
 
     Star other = (Star) obj;
     return Double.compare(this.magnitude, other.magnitude) == 0;
