@@ -23,6 +23,7 @@ public class Star extends CelestialObject{
     }
      @Override
     public boolean equals(Object obj) {
+        if (magnitude != this.magnitude) return false;
         if (this == obj) return true; 
         if (obj == null || getClass() != obj.getClass()) return false;
 
