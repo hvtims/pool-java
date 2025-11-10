@@ -1,4 +1,4 @@
-public class Templar extends Character implements Healer , Tank  {
+public class Templar extends Character implements Healer, Tank{
 
     private final int healCapacity;
     private final int shield;
@@ -28,7 +28,10 @@ public class Templar extends Character implements Healer , Tank  {
         this.heal(this);       
         target.takeDamage(6);  
     }
-
+   @Override
+    public int getShield() {
+        return this.shield;
+    }
     @Override
     public void takeDamage(int damage) {
         int finalDamage = damage - this.shield;
