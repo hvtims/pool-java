@@ -31,5 +31,5 @@ public class Templar extends Character implements Healer , Tank{
     }
 }
 
- - Roderick has been beaten, even with its 2 shield. So bad, it could heal 3 HP.
- - Roderick been beaten, even with its 2 shield. So bad, it could heal 1 HP.    
+//  - Roderick has been beaten, even with its 2 shield. So bad, it could heal 3 HP.
+//  - Roderick been beaten, even with its 2 shield. So bad, it could heal 1 HP.    
