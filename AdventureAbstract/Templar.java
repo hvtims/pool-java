@@ -1,4 +1,4 @@
-public class Templar extends Character implements Healer {
+public class Templar extends Character implements Healer , Tank  {
 
     private final int healCapacity;
     private final int shield;
