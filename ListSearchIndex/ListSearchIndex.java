@@ -8,10 +8,13 @@ public class ListSearchIndex {
                 return i;
             }
         }
-        return 0;
+        return null;
     }
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
-        return list.indexOf(value);
+        if (list == null){
+            return null;
+        }
+        return list.indexOf(value) != -1 ?list.indexOf(value): null ;
     }
     public static List<Integer> findAllIndexes(List<Integer> list, Integer value) {
         List<Integer> lista = new ArrayList<>();
