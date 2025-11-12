@@ -3,6 +3,9 @@ import java.util.*;
 
 public class ListSearchIndex {
     public static Integer findLastIndex(List<Integer> list, Integer value) {
+            if (list == null){
+                return null;
+            }
         for (int i = list.size() -1 ; i > 0 ; i --){
             if (list.get(i).equals(value)){
                 return i;
